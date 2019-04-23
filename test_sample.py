@@ -30,7 +30,28 @@ def test_givenPointOnEdgesHightLineFromItToXInfCrossesWithEdge():
     assert polyghon.isEdgeCrossingWithPointLine(pointIn,point2,point3) == True
 def test_givenPointNotOnEdgesHightLineFromItToXInfIsNotCrossingWithEdge():
     assert polyghon.isEdgeCrossingWithPointLine(pointOut,point4,point1) == False
-
+def test_givenPointLineAndEdgeCorossingPointIsReturned():
+    assert polyghon.whereEdgesAreCrossingWithPointLine(pointIn,point2,point3) == {3,2}
+def test_givenCrossingOnRightSideOfPointFunctionReturnsTrue():
+    assert polyghon.isCrossingOnRightSiedeOfPoint({3,2},pointIn) == True
+def test_givenCrossingOnLeftSideOfPointFunctionReturnsFalse():
+    assert polyghon.isCrossingOnRightSiedeOfPoint({2,3},pointIn) == False
+def test_givenPointInCameraViewreturnsTrue():
+    assert polyghon.isPointInAnyCameraView(pointIn,camera) == True
+def test_givenPointNotInCameraViewreturnsFalse():
+    assert polyghon.isPointInAnyCameraView(pointOut,camera) == False
+def test_givenPointInCameraRangeReturnsTrue():
+    assert polyghon.isPointInCameraRange(pointIn,camera) == True
+def test_givenPointNotInCameraRangeReturnsFalse():
+    assert polyghon.isPointInCameraRange({-4,-4},camera) == False
+def test_givenPointInCameraAngelReturnsTrue():
+    assert polyghon.isPointInCameraAngle(pointIn, camera) == True
+def test_givenPointNotInCameraAngelReturnsFalse():
+    assert polyghon.isPointInCameraAngle(pointOut, camera) == False
+def test_givenPointWithoutEdgeBeetweenCameraAndPointReturnsTrue():
+    assert polyghon.isAnyEdgeBeetwenCameraAndPoint(pointIn, camera)
+def test_givenPointWithEdgeBeetweenCameraAndPointReturnsFalse():
+    pass #TODO
 
 
 
